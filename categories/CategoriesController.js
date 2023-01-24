@@ -67,6 +67,7 @@ router.post("/categories/update", (req, res) => {
   var id = req.body.id;
   var title = req.body.title;
 
+
   Category.update({title:title, slug:slugify(title)}, {
     where: {
       id:id
@@ -75,5 +76,7 @@ router.post("/categories/update", (req, res) => {
     res.redirect("/admin/categories");
   })
 })
+
+
 
 module.exports = router;
